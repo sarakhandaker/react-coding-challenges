@@ -1,6 +1,12 @@
 import React, { useState, PureComponent } from 'react';
 import RocketCore from './RocketCore';
 
+/*
+  Converted to arrow function and wrapped in React.memo() higher order component 
+  (equivalent of shouldComponentUpdate() lifecycle method). 
+  Because the component renders with the same props this means that React will skip rendering the component, and reuse the last rendered result.
+*/
+
 export const FunctionalRocket = React.memo(props => {
   const [initialLaunchTime] = useState(Date.now());
 
